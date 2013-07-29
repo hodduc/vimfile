@@ -470,7 +470,11 @@ endif
 
 " CUSTOMIZING by hodduc {{{ --------------------------------
 set t_Co=256
-colorscheme molokai
+try
+	colorscheme molokai
+catch /^Vim\%((\a\+)\)\=:E185/
+	echo 'colorscheme molokai not exist'
+endtry
 " CUSTOMIZING end }}} -------------------------------------
 
 " end of configuration
