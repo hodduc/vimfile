@@ -110,7 +110,7 @@ set fenc=utf-8 ff=unix ffs=unix,dos,mac
 set fencs=utf-8,cp949,cp932,euc-jp,shift-jis,big5,latin2,ucs2-le
 
 " list mode
-set nolist lcs=extends:>,precedes:<
+set list lcs=extends:>,precedes:<
 if &tenc ==? "utf-8"
 	set lcs+=tab:»\ ,trail:·
 else
