@@ -28,6 +28,9 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
+" Bundle 'davidhalter/jedi-vim'
+Bundle 'moll/vim-node'
+Bundle 'capslock.vim'
 
 " color schemes
 Bundle 'molokai'
@@ -36,7 +39,15 @@ Bundle 'altercation/vim-colors-solarized'
 " git integration
 Bundle 'tpope/vim-fugitive'
 
+" Python pack
+Bundle 'klen/python-mode'
+
 let g:Powerline_symbols = 'fancy'
+let g:pymode_folding = 0
+let g:pymode_run_key = 'R'
+let g:pymode_lint_checker = 'pyflakes,pep8'
+let g:pymode_lint_ignore = 'E226'
+let g:pymode_rope = 0
 
 filetype plugin indent on
 
@@ -329,6 +340,7 @@ if has("autocmd")
 	au FileType python setl ts=8 sw=4 sts=4 et
 	au Filetype text setl tw=80
 	au FileType javascript,jsp setl cin
+	au FileType html,htmldjango setl ts=4 sts=4 sw=4 et
 	au BufNewFile,BufRead *.phps,*.php3s setf php
 
 	" syntax extensions (see prior section for definition)
@@ -475,6 +487,10 @@ try
 catch /^Vim\%((\a\+)\)\=:E185/
 	echo 'colorscheme molokai not exist'
 endtry
+
+set exrc
+set secure
+
 " CUSTOMIZING end }}} -------------------------------------
 
 " end of configuration
@@ -488,5 +504,6 @@ finish
 "   (as MacVim generates VimResized event on *every* ticks)
 " - bring SearchSession routine to the light
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 "" vim: ts=4 sw=4 fdm=marker nofen
