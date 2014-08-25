@@ -42,6 +42,8 @@ Bundle 'tpope/vim-fugitive'
 " Python pack
 Bundle 'klen/python-mode'
 
+Bundle 'ekalinin/Dockerfile.vim'
+
 let g:Powerline_symbols = 'fancy'
 
 filetype plugin indent on
