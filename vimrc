@@ -45,10 +45,19 @@ Bundle 'klen/python-mode'
 Bundle 'ekalinin/Dockerfile.vim'
 
 Bundle 'fatih/vim-go'
+Bundle 'majutsushi/tagbar'
 
 let g:Powerline_symbols = 'fancy'
 
 filetype plugin indent on
+
+" vim-go keymapping
+let g:go_fmt_command = "goimports"
+au FileType go nmap <F1> <Plug>(go-doc)<CR>
+au FileType go nmap <F2> <Plug>(go-doc-browser)<CR>
+au FileType go nmap <F5> <Plug>(go-run)<CR>
+au FileType go nmap <F7> <Plug>(go-build)<CR>
+au FileType go nmap <F8> :Tagbar<CR>
 
 " CUSTOMIZING end }}} -------------------------------------
 
