@@ -45,10 +45,8 @@ Bundle 'klen/python-mode'
 Bundle 'ekalinin/Dockerfile.vim'
 
 Bundle 'fatih/vim-go'
-Bundle 'majutsushi/tagbar'
 
 let g:Powerline_symbols = 'fancy'
-nmap <F8> :TagbarToggle<CR>
 
 filetype plugin indent on
 
