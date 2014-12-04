@@ -44,7 +44,11 @@ Bundle 'klen/python-mode'
 
 Bundle 'ekalinin/Dockerfile.vim'
 
+Bundle 'fatih/vim-go'
+Bundle 'majutsushi/tagbar'
+
 let g:Powerline_symbols = 'fancy'
+nmap <F8> :TagbarToggle<CR>
 
 filetype plugin indent on
 
@@ -485,12 +489,13 @@ catch /^Vim\%((\a\+)\)\=:E185/
 	echo 'colorscheme molokai not exist'
 endtry
 
-set exrc
-set secure
-
 let g:pymode_folding = 0
 let g:pymode_rope = 0
-let g:pymode_init = 0
+let g:pymode_lint = 1
+let g:pymode_lint_checkers = ['pyflakes', 'pep8']
+let g:pymode_lint_ignore = "E501"
+let g:pymode_options_max_line_length = 99
+let g:pymode_lint_unmodified = 0
 
 " CUSTOMIZING end }}} -------------------------------------
 
