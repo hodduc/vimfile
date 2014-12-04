@@ -495,6 +495,8 @@ let g:pymode_lint_ignore = "E501"
 let g:pymode_options_max_line_length = 99
 let g:pymode_lint_unmodified = 0
 
+nmap <silent> <C-j> :MBEbp<CR>
+nmap <silent> <C-k> :MBEbn<CR>
 " CUSTOMIZING end }}} -------------------------------------
 
 " end of configuration
