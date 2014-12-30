@@ -59,6 +59,8 @@ au FileType go nmap <F5> <Plug>(go-run)<CR>
 au FileType go nmap <F7> <Plug>(go-build)<CR>
 au FileType go nmap <F8> :Tagbar<CR>
 
+set cursorline
+
 " CUSTOMIZING end }}} -------------------------------------
 
 " UTILITY FUNCTIONS {{{ ------------------------------------
@@ -348,7 +350,7 @@ if has("autocmd")
 	au FileType python setl ts=8 sw=4 sts=4 et
 	au Filetype text setl tw=80
 	au FileType javascript,jsp setl cin
-	au FileType html,htmldjango setl ts=4 sts=4 sw=4 et
+	au FileType html,htmldjango setl ts=2 sts=2 sw=2 et
 	au BufNewFile,BufRead *.phps,*.php3s setf php
 
 	" syntax extensions (see prior section for definition)
