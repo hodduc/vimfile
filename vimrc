@@ -29,8 +29,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
 " Bundle 'davidhalter/jedi-vim'
-Bundle 'moll/vim-node'
-Bundle 'capslock.vim'
+" Bundle 'moll/vim-node'
+" Bundle 'capslock.vim'
 
 " color schemes
 Bundle 'molokai'
@@ -53,6 +53,10 @@ filetype plugin indent on
 
 " vim-go keymapping
 let g:go_fmt_command = "goimports"
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_structs = 1
+let g:go_auto_type_info = 1
 au FileType go nmap <F1> <Plug>(go-doc)<CR>
 au FileType go nmap <F2> <Plug>(go-doc-browser)<CR>
 au FileType go nmap <F5> <Plug>(go-run)<CR>
@@ -502,9 +506,9 @@ let g:pymode_folding = 0
 let g:pymode_rope = 0
 let g:pymode_lint = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8']
-let g:pymode_lint_ignore = "E501"
+let g:pymode_lint_ignore = "E501,E261"
 let g:pymode_options_max_line_length = 99
-let g:pymode_lint_unmodified = 0
+let g:pymode_lint_unmodified = 1
 
 nmap <silent> <C-j> :MBEbp<CR>
 nmap <silent> <C-k> :MBEbn<CR>
