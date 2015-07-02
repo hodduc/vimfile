@@ -26,7 +26,8 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'ervandew/supertab'
+Bundle 'Valloric/YouCompleteMe'
+" Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
 " Bundle 'davidhalter/jedi-vim'
 " Bundle 'moll/vim-node'
@@ -355,6 +356,7 @@ if has("autocmd")
 	au Filetype text setl tw=80
 	au FileType javascript,jsp setl cin
 	au FileType html,htmldjango setl ts=2 sts=2 sw=2 et
+	au FileType go setl ts=4 sts=4 sw=4
 	au BufNewFile,BufRead *.phps,*.php3s setf php
 
 	" syntax extensions (see prior section for definition)
@@ -510,8 +512,13 @@ let g:pymode_lint_ignore = "E501,E261"
 let g:pymode_options_max_line_length = 99
 let g:pymode_lint_unmodified = 1
 
+" turn off YouCompleteMe identifier based completion
+let g:ycm_min_num_of_chars_for_completion = 99
+let g:ycm_key_invoke_completion = '<C-l>'
+
 nmap <silent> <C-j> :MBEbp<CR>
 nmap <silent> <C-k> :MBEbn<CR>
+
 " CUSTOMIZING end }}} -------------------------------------
 
 " end of configuration
