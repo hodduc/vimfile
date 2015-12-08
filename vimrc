@@ -36,6 +36,7 @@ Bundle 'mileszs/ack.vim'
 " color schemes
 Bundle 'molokai'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'summerfruit256.vim'
 
 " git integration
 Bundle 'tpope/vim-fugitive'
@@ -46,7 +47,9 @@ Bundle 'klen/python-mode'
 Bundle 'ekalinin/Dockerfile.vim'
 
 Bundle 'fatih/vim-go'
+Bundle 'cstrahan/vim-capnp'
 Bundle 'majutsushi/tagbar'
+
 
 let g:Powerline_symbols = 'fancy'
 
@@ -57,10 +60,11 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_operators = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_structs = 1
-let g:go_auto_type_info = 1
+" let g:go_auto_type_info = 1
 au FileType go nmap <F1> <Plug>(go-doc)<CR>
 au FileType go nmap <F2> <Plug>(go-doc-browser)<CR>
 au FileType go nmap <F5> <Plug>(go-run)<CR>
+au FileType go nmap <F6> <Plug>(go-test)<CR>
 au FileType go nmap <F7> <Plug>(go-build)<CR>
 au FileType go nmap <F8> :Tagbar<CR>
 
@@ -357,6 +361,7 @@ if has("autocmd")
 	au FileType javascript,jsp setl cin
 	au FileType html,htmldjango setl ts=2 sts=2 sw=2 et
 	au FileType go setl ts=4 sts=4 sw=4
+	au BufNewFile,BufRead *.gbp setf json
 	au BufNewFile,BufRead *.phps,*.php3s setf php
 
 	" syntax extensions (see prior section for definition)
@@ -500,6 +505,7 @@ endif
 set t_Co=256
 try
 	colorscheme molokai
+"	colorscheme summerfruit256
 catch /^Vim\%((\a\+)\)\=:E185/
 	echo 'colorscheme molokai not exist'
 endtry
@@ -515,6 +521,9 @@ let g:pymode_lint_unmodified = 1
 " turn off YouCompleteMe identifier based completion
 let g:ycm_min_num_of_chars_for_completion = 99
 let g:ycm_key_invoke_completion = '<C-l>'
+
+set wildmenu
+set wildmode=list:longest,full
 
 nmap <silent> <C-j> :MBEbp<CR>
 nmap <silent> <C-k> :MBEbn<CR>
